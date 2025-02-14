@@ -6,14 +6,15 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 /**
  * Author: Vishnuka Yahan De Silva
- * User:macbookair
+ * User:vishnuka
  * Date:2025-02-14
- * Time:16:34
+ * Time:13:04
  */
 @Configuration
 public class WebClientConfig {
+
     @Bean
-    public WebClient.Builder webClientBuilder() {
-        return  WebClient.builder();
+    public WebClient webClient(WebClient.Builder builder) {
+        return builder.baseUrl("https://api.openweathermap.org").build();
     }
 }
